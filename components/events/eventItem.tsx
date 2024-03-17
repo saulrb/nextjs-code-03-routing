@@ -28,41 +28,39 @@ const exploreLink = (id: string): string => {
 }
 const EventItem: FC<Props> = ({ item }) => {
   return (
-    <>
-      <li className={classes.item}>
-        <Image
-          className={classes.image}
-          src={`/${item.image}`}
-          alt={`${item.title}`}
-          width={100}
-          height={100}
-        />
-        <div className={classes.content}>
-          <div>
-            <h2>{item.title}</h2>
-          </div>
-          <div className={classes.date}>
-            <DateIcon />
-            <time>{converDate(item.date)}</time>
-          </div>
-          <div className={classes.address}>
-            <AddressIcon />
-            <address>{formatedAddress(item.location)}</address>
-          </div>
-          <div>
-            <p>{item.description}</p>
-          </div>
-          <div className={classes.actions}>
-            <Button link={exploreLink(item.id)}>
-              <span>Exploring event</span>
-              <span className={classes.icon}>
-                <ArrowRightIcon />
-              </span>
-            </Button>
-          </div>
+    <li className={classes.item} key={item.id}>
+      <Image
+        className={classes.image}
+        src={`/${item.image}`}
+        alt={`${item.title}`}
+        width={100}
+        height={100}
+      />
+      <div className={classes.content}>
+        <div>
+          <h2>{item.title}</h2>
         </div>
-      </li>
-    </>
+        <div className={classes.date}>
+          <DateIcon />
+          <time>{converDate(item.date)}</time>
+        </div>
+        <div className={classes.address}>
+          <AddressIcon />
+          <address>{formatedAddress(item.location)}</address>
+        </div>
+        <div>
+          <p>{item.description}</p>
+        </div>
+        <div className={classes.actions}>
+          <Button link={exploreLink(item.id)}>
+            <span>Exploring event</span>
+            <span className={classes.icon}>
+              <ArrowRightIcon />
+            </span>
+          </Button>
+        </div>
+      </div>
+    </li>
   )
 }
 
