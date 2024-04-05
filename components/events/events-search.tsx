@@ -13,6 +13,8 @@ const EventsSearch: FC<Props> = ({ onSearch }) => {
 
   const submitHandler = (event: any) => {
     event.preventDefault()
+    console.log('Selected Year', selectedYear)
+    console.log('Selected Month', selectedMonth)
     onSearch(selectedYear, selectedMonth)
   }
 

@@ -1,5 +1,6 @@
 import { Fragment } from 'react'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 import { getEventById, getFeaturedEvents } from '../../../helpers/api-util'
 import EventSummary from '../../../components/events/event-summary'
 import EventLogistics from '../../../components/events/event-logistics'
@@ -21,6 +22,10 @@ const EventDetailPage = (props: any) => {
 
   return (
     <Fragment>
+      <Head>
+        <title> {event.title}</title>
+        <meta name="description" content={event.description} />
+      </Head>
       <EventSummary title={event.title} />
       <EventLogistics data={event} />
       <EventContent>
