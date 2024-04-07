@@ -36,7 +36,7 @@ const EventDetailPage = (props: any) => {
 }
 
 export async function getStaticProps(context: any) {
-  const eventId = context.params.eventId
+  const eventId = context.params.id
 
   const event = await getEventById(eventId)
 
@@ -50,8 +50,7 @@ export async function getStaticProps(context: any) {
 
 export async function getStaticPaths() {
   const events = await getFeaturedEvents()
-
-  const paths = events.map(event => ({ params: { eventId: event.id } }))
+  const paths = events.map(event => ({ params: { id: event.id } }))
 
   return {
     paths: paths,

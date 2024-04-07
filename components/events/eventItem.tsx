@@ -33,8 +33,8 @@ const EventItem: FC<Props> = ({ item }) => {
         className={classes.image}
         src={`/${item.image}`}
         alt={`${item.title}`}
-        width={100}
-        height={100}
+        width={250}
+        height={160}
       />
       <div className={classes.content}>
         <div>
