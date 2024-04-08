@@ -14,7 +14,9 @@ const EventsSearch: FC<Props> = ({ onSearch }) => {
 
   const submitHandler = (event: any) => {
     event.preventDefault()
-    onSearch(yearRef.current.value, monthRef.current.value)
+    if (yearRef.current !== null && monthRef.current !== null) {
+      onSearch(yearRef.current.value, monthRef.current.value)
+    }
   }
 
   return (
